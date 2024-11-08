@@ -17,9 +17,9 @@ if (isset($_POST["txtUser"]) && isset($_POST["txtPassword"])) {
         $profesor = $dao->autenticarPf($user, $password);
 
         if ($alumno) {
-            iniciarSesion($user, $alumno->Nombre . " " . $alumno->Apellidos, "selectorDeMaterias.php");
+            iniciarSesion($user, $alumno->Nombre . " " . $alumno->Apellidos, "selectorDeMaterias.php",false);
         } else if ($profesor) {
-            iniciarSesion($user, $profesor->Nombre . " " . $profesor->Apellidos, "selectorDeGrupos.php");
+            iniciarSesion($user, $profesor->Nombre . " " . $profesor->Apellidos, "selectorDeGrupos.php",true);
         } else {
             $errorMsg = '<div id="phpErrorAlert" class="alert alert-danger" role="alert" style="margin: 10px;">Usuario y/o contraseña incorrectos.</div>';
         }
@@ -28,11 +28,13 @@ if (isset($_POST["txtUser"]) && isset($_POST["txtPassword"])) {
     }
 }
 
-function iniciarSesion($user, $nombre, $redirect)
+function iniciarSesion($user, $nombre, $redirect, $tipo)
 {
     session_start();
     $_SESSION["user"] = $user;
+    $_SESSION["tipo"] = $tipo;
     $_SESSION["nombre"] = $nombre;
+    var_dump($_SESSION); // Verifica el contenido de la sesión
     header("Location: $redirect");
     exit();
 }

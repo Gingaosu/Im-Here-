@@ -19,7 +19,7 @@
     //var_dump($_SESSION["user"]);
     //var_dump($_SESSION["nombre"]);
 
-    if (!isset($_SESSION['user'])) {
+    if (!isset($_SESSION['user']) || !isset($_SESSION['tipo']) || $_SESSION['tipo'] === false) {
         header("Location: login.php");
         exit();
     }
