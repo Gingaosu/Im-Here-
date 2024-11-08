@@ -47,12 +47,26 @@ nav.navbar .btn-outline-secondary {
 }
 
 body {
-    background-image: url(../imgs/fondo2.jpg);
+    background: linear-gradient(135deg, 
+        #a06a77 10%,
+        #c9956f 30%,
+        #d8b374 50%, 
+        #8fbf97 70%, 
+        #4a8268 90%
+    );
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
     font-family: "Raleway", Arial, Helvetica, sans-serif;
+    position: relative;
+    overflow: hidden;
 }
+
+
+
+
+
+
 
 .form {
     display: flex;

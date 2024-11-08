@@ -56,12 +56,17 @@ nav.navbar .btn-outline-secondary {
 }
 
 body {
-    background-image: url(../imgs/fondo4.jpg);
+    background-color: #4158D0;
+    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
     background-position: center;
-    background-size: 150%;
+    background-size: cover;
     background-attachment: fixed;
     font-family: "Raleway", Arial, Helvetica, sans-serif;
 }
+
+
+
+
 
 .superior {
     display: flex;
@@ -78,7 +83,7 @@ body {
     gap: 10px;
 }
 
-.materia{
+.materia {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -99,7 +104,8 @@ body {
     color: white;
 }
 
-#txtGrupo, #txtHorario {
+#txtGrupo,
+#txtHorario {
     font-size: 20px;
     width: 100%;
     padding: 0 0px 5px 20px;

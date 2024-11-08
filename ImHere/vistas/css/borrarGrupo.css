@@ -56,7 +56,8 @@ nav.navbar .btn-outline-secondary {
 }
 
 body {
-    background-image: url(../imgs/fondo4.jpg);
+    background-color: #4158D0;
+    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
