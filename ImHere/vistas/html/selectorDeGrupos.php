@@ -19,8 +19,14 @@
     //var_dump($_SESSION["user"]);
     //var_dump($_SESSION["nombre"]);
 
-    if (!isset($_SESSION['user']) || !isset($_SESSION['tipo']) || $_SESSION['tipo'] === false) {
+    if (!isset($_SESSION['user'])) {
         header("Location: login.php");
+        exit();
+    }
+
+    if (!isset($_SESSION['tipo']) || $_SESSION['tipo'] === false) {
+        $_SESSION['redirect_url'] = $_SERVER['REQUEST_URI']; 
+        header("Location: selectorDeMaterias.php");
         exit();
     }
 

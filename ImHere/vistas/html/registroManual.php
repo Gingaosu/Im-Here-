@@ -7,6 +7,12 @@ if (!isset($_SESSION['user'])) {
     exit();
 }
 
+if (!isset($_SESSION['tipo']) || $_SESSION['tipo'] === false) {
+    $_SESSION['redirect_url'] = $_SERVER['REQUEST_URI']; 
+    header("Location: selectorDeMaterias.php");
+    exit();
+}
+
 if (isset($_GET['logout'])) {
     session_destroy();
     header("Location: login.php");
