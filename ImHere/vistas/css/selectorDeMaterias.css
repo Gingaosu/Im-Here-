@@ -61,17 +61,9 @@ body {
     padding: 10px;
 }
 
-.materias{
-    display: flex;
-    flex-wrap: wrap; /* Permite que los divs se ajusten en múltiples filas si es necesario */
-    gap: 10px;
-    padding: 10px;
-    width: 100%;
-}
-
 .datos{
     display: flex;
-    flex-wrap: wrap; /* Permite que los divs se ajusten en múltiples filas si es necesario */
+    flex-wrap: wrap;
     gap: 10px;
     padding: 10px;
     width: 100%;
@@ -83,7 +75,7 @@ body {
     flex-direction: column;
     background-color: hsla(0, 0%, 0%, 0.300);
     width: 100%;
-    height: 650px;
+    height: 630px;
     border-radius: 10px;
     padding: 20px 30px;
     overflow-y: auto;
@@ -92,18 +84,52 @@ body {
     
 }
 
-.materia{
+.materias {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 10px;
+    padding: 10px;
+    width: 100%;
+    overflow-x: auto;
+
+}
+
+.materias::-webkit-scrollbar {
+    height: 22px;
+    
+}
+
+.materias::-webkit-scrollbar-track {
+    background: #f6bfff; 
+    border-radius: 10px;
+}
+
+.materias::-webkit-scrollbar-thumb {
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: 2px solid #000000;
+}
+
+.materias::-webkit-scrollbar-thumb:hover {
+    background-color: #ffffff;
+    border: 2px solid #000000;
+}
+
+.materia {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: start;
-    background-color: hsla(0, 0%, 0%, 0.300);
+    background: linear-gradient(135deg, rgba(94, 13, 170, 0.45), rgba(5, 116, 153, 0.45));
     width: calc(25% - 10px);
     height: 170px;
     padding: 10px;
     border-radius: 10px;
     box-sizing: border-box;
+    flex: 0 0 auto;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.35);
 }
+
 
 #txtNombre {
     font-weight: bolder;
