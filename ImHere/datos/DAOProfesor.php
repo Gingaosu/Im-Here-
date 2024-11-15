@@ -28,11 +28,10 @@ class DAOProfesor
         try {
             $this->conectar();
 
-            //Almacenará el registro obtenido de la BD
             $obj = null;
 
             $sentenciaSQL = $this->conexion->prepare("SELECT idProfesor,Nombre,Apellidos FROM Profesor WHERE idProfesor=? AND password=sha224(?)");
-            //Se ejecuta la sentencia sql con los parametros dentro del arreglo 
+            
             $sentenciaSQL->execute([$user, $password]);
 
             /*Obtiene los datos*/
@@ -193,7 +192,6 @@ class DAOProfesor
 
             return $lista;
         } catch (PDOException $e) {
-            // var_dump("". $e->getMessage());
             return null;
         } finally {
             Conexion::desconectar();

@@ -1,8 +1,6 @@
 <?php
 session_start();
 require_once("../../datos/DAOProfesor.php");
-//var_dump($_SESSION["user"]);
-//var_dump($_SESSION["nombre"]);
 
 if (!isset($_SESSION['user'])) {
     header("Location: login.php");

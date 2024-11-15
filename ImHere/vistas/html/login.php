@@ -34,7 +34,6 @@ function iniciarSesion($user, $nombre, $redirect, $tipo)
     $_SESSION["user"] = $user;
     $_SESSION["tipo"] = $tipo;
     $_SESSION["nombre"] = $nombre;
-    var_dump($_SESSION); // Verifica el contenido de la sesión
     header("Location: $redirect");
     exit();
 }

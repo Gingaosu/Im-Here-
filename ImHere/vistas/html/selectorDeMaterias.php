@@ -17,8 +17,6 @@
     <?php
     require_once ("../../datos/DAOAlumno.php");
     session_start();
-    //var_dump($_SESSION["user"]);
-    //var_dump($_SESSION["nombre"]);
     
     if (!isset($_SESSION['user'])) {
         header("Location: login.php");
