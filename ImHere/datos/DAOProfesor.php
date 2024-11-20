@@ -31,7 +31,7 @@ class DAOProfesor
             $obj = null;
 
             $sentenciaSQL = $this->conexion->prepare("SELECT idProfesor,Nombre,Apellidos FROM Profesor WHERE idProfesor=? AND password=sha224(?)");
-            
+
             $sentenciaSQL->execute([$user, $password]);
 
             /*Obtiene los datos*/
@@ -285,6 +285,36 @@ class DAOProfesor
         }
     }
 
+    public function registrarAsistenciaFaltas($idClase, $fecha)
+    {
+        try {
+            $this->conectar();
+
+            // Obtener los alumnos inscritos en la clase
+            $alumnos = $this->obtenerAlumnosPorClase($idClase);
+            error_log("Alumnos obtenidos: " . print_r($alumnos, true));
+
+            foreach ($alumnos as $alumno) {
+                $sentenciaSQL = $this->conexion->prepare("
+                INSERT INTO registro (alumno_nocontrol, clase_id, asistencia, fecha)
+                VALUES (?, ?, false, ?)
+                ON DUPLICATE KEY UPDATE asistencia = VALUES(asistencia)
+            ");
+                $sentenciaSQL->execute([$alumno->noControl, $idClase, $fecha]);
+            }
+
+            return true;
+        } catch (PDOException $e) {
+            error_log("Error en registrarAsistenciaFaltas: " . $e->getMessage());
+            return false;
+        } finally {
+            Conexion::desconectar();
+        }
+    }
+
+
+
+
     public function agregarAlumno($noControl, $idClase)
     {
         try {
@@ -429,6 +459,9 @@ class DAOProfesor
             Conexion::desconectar();
         }
     }
+
+
+
 
     public function verificarAsistenciaRegistrada($idClase, $fecha)
     {
