@@ -361,34 +361,6 @@ class DAOProfesor
         }
     }
 
-    /*public function actualizarAsistenciay($alumnoNoControl, $claseId, $fechaHoy)
-    {
-        try {
-            $this->conectar();
-
-            // Obtener la fecha actual sin incluir la hora exacta
-            $sentenciaSQL = $this->conexion->prepare("SELECT asistencia FROM Registro WHERE Alumno_noControl = ? AND clase_id = ? AND DATE(fecha) = ?");
-            $sentenciaSQL->execute([$alumnoNoControl, $claseId, $fechaHoy]);
-            // Obtener la fecha actual sin incluir la hora exacta
-            $sentenciaSQL = $this->conexion->prepare("UPDATE Registro SET asistencia = true WHERE Alumno_noControl = ? AND clase_id = ? AND DATE(fecha) = ?");
-            $resultado = $sentenciaSQL->execute([$alumnoNoControl, $claseId, $fechaHoy]);
-            //var_dump($resultado.' when c papau');
-            $filasActualizadas = $sentenciaSQL->rowCount();
-
-            // Verificar si al menos una fila fue actualizada
-            if ($filasActualizadas > 0) {
-                return true;
-            } else {
-                return false;
-            }
-        } catch (PDOException $e) {
-            var_dump($e->getMessage());
-            return false;
-        } finally {
-            Conexion::desconectar();
-        }
-    }*/
-
     public function actualizarAsistencia($alumnoNoControl, $claseId, $fechaHoy)
     {
         try {
@@ -509,5 +481,10 @@ class DAOProfesor
         } finally {
             Conexion::desconectar();
         }
+    }
+
+    public function setConexion($conexion)
+    {
+        $this->conexion = $conexion;
     }
 }

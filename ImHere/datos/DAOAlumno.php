@@ -67,9 +67,6 @@ class DAOALumno
 
             //$resultado = $consulta->fetchAll(PDO::FETCH_ASSOC);
             $resultado = $sentenciaSQL->fetchAll(PDO::FETCH_OBJ);
-            /*Podemos obtener un cursor resultado con todos los renglones como 
-            un arreglo de arreglos asociativos o un arreglo de objetos*/
-            /*Se recorre el cursor para obtener los datos*/
 
             foreach ($resultado as $fila) {
                 $obj = new Grupo();
@@ -106,10 +103,6 @@ class DAOALumno
 
             //$resultado = $consulta->fetchAll(PDO::FETCH_ASSOC);
             $resultado = $sentenciaSQL->fetchAll(PDO::FETCH_OBJ);
-            /*Podemos obtener un cursor resultado con todos los renglones como 
-            un arreglo de arreglos asociativos o un arreglo de objetos*/
-            /*Se recorre el cursor para obtener los datos*/
-            //var_dump($resultado);
             foreach ($resultado as $fila) {
                 $obj = new Asistencia();
                 $obj->idClase = $fila->clase_id;
@@ -127,46 +120,4 @@ class DAOALumno
         }
     }
 
-
-    /**
-     * Metodo que obtiene todos los usuarios de la base de datos y los
-     * retorna como una lista de objetos  
-     */
-    public function obtenerTodos()
-    {
-        try {
-            $this->conectar();
-
-            $lista = array();
-            /*Se arma la sentencia sql para seleccionar todos los registros de la base de datos*/
-            $sentenciaSQL = $this->conexion->prepare("SELECT id,nombre,apellido1,apellido2,email,genero FROM Usuarios");
-
-            //Se ejecuta la sentencia sql, retorna un cursor con todos los elementos
-            $sentenciaSQL->execute();
-
-            //$resultado = $consulta->fetchAll(PDO::FETCH_ASSOC);
-            $resultado = $sentenciaSQL->fetchAll(PDO::FETCH_OBJ);
-            /*Podemos obtener un cursor resultado con todos los renglones como 
-            un arreglo de arreglos asociativos o un arreglo de objetos*/
-            /*Se recorre el cursor para obtener los datos*/
-
-            foreach ($resultado as $fila) {
-                $obj = new Alumno();
-                $obj->id = $fila->id;
-                $obj->nombre = $fila->nombre;
-                $obj->apellido1 = $fila->apellido1;
-                $obj->apellido2 = $fila->apellido2;
-                $obj->email = $fila->email;
-                $obj->genero = $fila->genero;
-                //Agrega el objeto al arreglo, no necesitamos indicar un índice, usa el próximo válido
-                $lista[] = $obj;
-            }
-
-            return $lista;
-        } catch (PDOException $e) {
-            return null;
-        } finally {
-            Conexion::desconectar();
-        }
-    }
 }

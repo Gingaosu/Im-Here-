@@ -1,0 +1,1 @@
+{"version":1,"defects":{"TestProfesor::testAutenticarPf_UsuarioValido_RetornaProfesor":8,"TestProfesor::testObtenerGrupos_ProfesorConGrupos_RetornaListaDeGrupos":8,"TestProfesor::testObtenerClasePorId_ClaseValida_RetornaClase":8,"TestProfesor::testObtenerAlumnos_ClaseConAlumnos_RetornaListaDeAlumnos":8},"times":[]}

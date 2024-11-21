@@ -1,0 +1,15 @@
+{
+    "autoload": {
+        "classmap": [
+            "imHere/"
+        ]
+    },
+    "autoload-dev": {
+        "classmap": [
+            "imHere/test/"
+        ]
+    },
+    "require-dev": {
+        "phpunit/phpunit": "11.4"
+    }
+}
