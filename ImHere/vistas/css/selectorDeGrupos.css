@@ -64,10 +64,6 @@ body {
     font-family: "Raleway", Arial, Helvetica, sans-serif;
 }
 
-
-
-
-
 .superior {
     display: flex;
     align-items: center;
@@ -88,12 +84,14 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: start;
-    background-color: hsla(0, 0%, 0%, 0.300);
+    background: linear-gradient(135deg, rgba(228, 113, 170, 0.2), rgba(160, 94, 223, 0.2), rgba(38, 172, 216, 0.2));
     width: calc(25% - 10px);
-    height: 170px;
+    height: 170x;
     padding: 10px;
     border-radius: 10px;
     box-sizing: border-box;
+    color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.35);
 }
 
 #txtNombre {
@@ -102,6 +100,9 @@ body {
     width: 100%;
     padding: 10px 0 5px 20px;
     color: white;
+    overflow: hidden; 
+    text-overflow: ellipsis;  
+    white-space: nowrap;    
 }
 
 #txtGrupo,

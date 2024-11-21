@@ -60,7 +60,7 @@ if (isset($_GET['logout'])) {
 
             $numControl = "";
             if (isset($_POST["txtNumCont"])) {
-                $numControl = trim($_POST["txtNumCont"]);
+                $numControl = strtoupper(trim($_POST["txtNumCont"]));
 
                 // Validación del número de control
                 if (strlen($numControl) == 9) {
