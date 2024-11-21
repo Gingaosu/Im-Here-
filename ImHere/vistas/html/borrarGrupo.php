@@ -120,7 +120,7 @@ if (isset($_GET['logout'])) {
                     <input type="hidden" name="id" value="<?= $idGrupo ?>">
                     <a href="selectorDeGrupos.php" class="btn btn-danger" id="btnCancelar">Cancelar</a>
 
-                    <button type="submit" class="btn btn-success" id="btnSi" name="confirmar" value="Si">Si</button>
+                    <button type="submit" class="btn btn-primary" id="btnSi" name="confirmar" value="Si">Si</button>
                 </form>
             </div>
         </div>

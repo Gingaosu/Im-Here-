@@ -8,7 +8,7 @@
 
 nav.navbar {
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(20, 33, 67, 1);
     color: white;
     font-size: 18px;
     font-family: "Raleway", Arial, Helvetica, sans-serif;
@@ -47,13 +47,14 @@ nav.navbar .btn-outline-secondary {
 }
 
 body {
-    background: linear-gradient(135deg, 
+    background: linear-gradient(155deg, rgba(43, 65, 49, 0.8), rgba(52, 140, 38, 0.8));
+    /*background: linear-gradient(135deg, 
         #a06a77 10%,
         #c9956f 30%,
         #d8b374 50%, 
         #8fbf97 70%, 
         #4a8268 90%
-    );
+    );*/
     background-position: center;
     background-size: cover;
     background-attachment: fixed;

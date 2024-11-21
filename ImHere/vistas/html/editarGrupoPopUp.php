@@ -162,7 +162,7 @@ if (isset($_GET['logout'])) {
             <input type="hidden" name="idGrupo" value="<?= isset($_GET['id']) ? $_GET['id'] : '' ?>">
             <div id="botones">
                 <a href="selectorDeGrupos.php" class="btn btn-danger" id="btnCancelar">Cancelar</a>
-                <button type="submit" class="btn btn-success" id="btnAceptar">Aceptar</button>
+                <button type="submit" class="btn btn-primary" id="btnAceptar">Aceptar</button>
             </div>
         </div>
     </form>
