@@ -106,7 +106,7 @@ if (isset($_GET['logout'])) {
     ?>
 
     <div class="superior">
-        <a href="selectorDeGrupos.php" class="btn btn-outline-light">Regresar</a>
+        <a href="selectorDeGrupos.php" class="btn btn-outline-dark">Regresar</a>
     </div>
     <div class="form">
         <div class="calendario">
@@ -128,7 +128,7 @@ if (isset($_GET['logout'])) {
                             class="btn btn-primary">Registrar</a>
                         <button id="registro_clasico" class="btn btn-secondary">Registro Clásico</button>
                         <!-- Nuevo botón -->
-                        <a href="agregarAlumnoPopUp.php?id=<?= urlencode($idClase) ?>" class="btn btn-success">Agregar
+                        <a href="agregarAlumnoPopUp.php?id=<?= urlencode($idClase) ?>" class="btn btn-primary">Agregar
                             alumno</a>
                     </div>
                 </div>
@@ -172,7 +172,7 @@ if (isset($_GET['logout'])) {
                 </table>
             </div>
             <div class="btnsRes">
-                <button type="button" class="btn btn-success" id="btnExportar">Exportar</button>
+                <button type="button" class="btn btn-secondary" id="btnExportar">Exportar</button>
                 <!-- <button type="button" class="btn btn-primary">Guardar</button> -->
             </div>
         </div>

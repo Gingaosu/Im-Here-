@@ -192,7 +192,7 @@ if (isset($_GET['logout'])) {
     ?>
 
     <div class="superior">
-        <a href="verMateria.php?id=<?php echo $idClase; ?>" class="btn btn-outline-light">Regresar</a>
+        <a href="verMateria.php?id=<?php echo $idClase; ?>" class="btn btn-outline-dark">Regresar</a>
     </div>
     <div class="form" novalidate>
         <div class="texto">
@@ -205,7 +205,7 @@ if (isset($_GET['logout'])) {
 
         <div class="btnAcept">
             <!-- <button type="text" class="btn btn-outline-light" id="btnAceptar">Aceptar</button> -->
-            <button type="button" class="btn btn-outline-light" id="btnAceptar">Aceptar</button>
+            <button type="button" class="btn btn-success" id="btnAceptar">Aceptar</button>
         </div>
     </div>
 
