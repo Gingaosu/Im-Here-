@@ -101,7 +101,7 @@ body {
 }
 
 .materias::-webkit-scrollbar-track {
-    background: #f6bfff; 
+    background: rgba(20, 33, 67, 1); 
     border-radius: 10px;
 }
 
