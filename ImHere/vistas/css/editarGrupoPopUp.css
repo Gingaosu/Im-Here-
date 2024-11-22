@@ -92,7 +92,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /*background-color: hsla(0, 0%, 0%, 0.700);*/
+    background-color: hsla(0, 5%, 78%, 0.2);
     /*background: linear-gradient(155deg, rgba(43, 65, 49, 0.8), rgba(52, 140, 38, 0.8));*/
     width: 25%;
     height: 450px;

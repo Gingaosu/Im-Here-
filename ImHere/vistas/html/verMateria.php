@@ -106,7 +106,7 @@ if (isset($_GET['logout'])) {
     ?>
 
     <div class="superior">
-        <a href="selectorDeGrupos.php" class="btn btn-outline-dark">Regresar</a>
+        <a href="selectorDeGrupos.php" class="btn btn-success">Regresar</a>
     </div>
     <div class="form">
         <div class="calendario">

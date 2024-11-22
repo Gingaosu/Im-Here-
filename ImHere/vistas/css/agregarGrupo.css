@@ -77,7 +77,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /*background: linear-gradient(155deg, rgba(43, 65, 49, 0.8), rgba(52, 140, 38, 0.8));*/
+    background: hsla(0, 3%, 62%, 0.3);
     width: 30%;
     height: 600px;
     padding: 50px;
