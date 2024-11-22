@@ -113,7 +113,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /*background-color: hsla(0, 0%, 0%, 0.300);*/
+    background-color: hsla(0, 0%, 0%, 0.200);
     width: 15%;
     height: 60px;
     border-radius: 10px;
