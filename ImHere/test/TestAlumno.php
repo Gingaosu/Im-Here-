@@ -11,14 +11,12 @@ class TestAlumno extends TestCase
 
     protected function setUp(): void
     {
-        $this->mockConexion = $this->createMock(PDO::class);
-        $this->daoAlumno = $this->getMockBuilder(DAOAlumno::class)
-            ->onlyMethods(['conectar'])
-            ->getMock();
+        $this->daoAlumno = $this->createMock(DAOALumno::class);
 
-        $this->daoAlumno->method('conectar')->willReturn($this->mockConexion);
+        $mockPDO = $this->createMock(PDO::class);
+
+        $this->daoAlumno->setConexion($mockPDO);
     }
-
     public function testAutenticarAl_CredencialesCorrectas_RetornaObjetoAlumno()
     {
         $mockStatement = $this->createMock(PDOStatement::class);

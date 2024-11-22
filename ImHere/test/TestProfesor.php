@@ -8,33 +8,38 @@ class TestProfesor extends TestCase
 
     protected function setUp(): void
     {
-        $this->daoProfesor = $this->createPartialMock(DAOProfesor::class, ['conectar']);
-        $this->daoProfesor->method('conectar')->willReturn(null);
+        $this->daoProfesor = $this->createMock(DAOProfesor::class);
+
+        $mockPDO = $this->createMock(PDO::class);
+
+        $this->daoProfesor->setConexion($mockPDO);
     }
+
 
     public function testAutenticarPf_UsuarioValido_RetornaProfesor()
     {
-        $mockConexion = $this->createMock(PDO::class);
         $mockStatement = $this->createMock(PDOStatement::class);
-
         $mockStatement->method('fetch')->willReturn((object)[
             'idprofesor' => 'P123',
             'nombre' => 'Juan',
             'apellidos' => 'Pérez'
         ]);
 
-        $mockConexion->method('prepare')->willReturn($mockStatement);
+        $mockPDO = $this->createMock(PDO::class);
 
-        // Inyectamos
-        $this->daoProfesor->setConexion($mockConexion);
+        $mockPDO->method('prepare')->willReturn($mockStatement);
+
+        $this->daoProfesor->setConexion($mockPDO);
 
         $result = $this->daoProfesor->autenticarPf('P123', 'password123');
 
         $this->assertNotNull($result);
-        $this->assertEquals('P123', $result->idProfesor);
-        $this->assertEquals('Juan', $result->Nombre);
-        $this->assertEquals('Pérez', $result->Apellidos);
+        $this->assertEquals('P123', $result->idprofesor);
+        $this->assertEquals('Juan', $result->nombre);
+        $this->assertEquals('Pérez', $result->apellidos);
     }
+
+
 
     public function testObtenerGrupos_ProfesorConGrupos_RetornaListaDeGrupos()
     {

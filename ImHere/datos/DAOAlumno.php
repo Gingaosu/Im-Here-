@@ -119,5 +119,8 @@ class DAOALumno
             Conexion::desconectar();
         }
     }
-
+    public function setConexion($conexion)
+    {
+        $this->conexion = $conexion;
+    }
 }
