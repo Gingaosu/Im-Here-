@@ -42,12 +42,14 @@ document.addEventListener('DOMContentLoaded', function () {
             .then(response => response.json())
             .then(data => {
                 if (data.registrado) {
-                    alert("Las asistencias para esta clase ya han sido registradas como faltas.");
+                    alert("Las asistencias ya han sido registradas");
                     return;
                 }
     
                 // Si no están registradas, proceder con la confirmación
-                if (confirm("¿Deseas registrar automáticamente las asistencias como faltas?")) {
+                if (confirm("¿Deseas hacer uso del registro clásico?\nUna vez le des a aceptar los registros de asistencia aparecerán a la derecha como inasistencia.\n"+
+                    "Para cambiar el estado de la asistencia solo deberás dar clic en el botón No para cambiarlo a Si y viceversa."
+                )) {
                     fetch("registroClasico.php", {
                         method: "POST",
                         headers: { "Content-Type": "application/json" },
